@@ -41,7 +41,7 @@ namespace Ch5_Exer11_TippingTable3
             this.txtHighestPercentage = new System.Windows.Forms.TextBox();
             this.txtLowestBill = new System.Windows.Forms.TextBox();
             this.txtHighestBill = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblOuput = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlOutput.SuspendLayout();
@@ -51,7 +51,7 @@ namespace Ch5_Exer11_TippingTable3
             // 
             this.pnlOutput.AutoScroll = true;
             this.pnlOutput.BackColor = System.Drawing.Color.Transparent;
-            this.pnlOutput.Controls.Add(this.label6);
+            this.pnlOutput.Controls.Add(this.lblOuput);
             this.pnlOutput.Location = new System.Drawing.Point(448, 130);
             this.pnlOutput.Name = "pnlOutput";
             this.pnlOutput.Size = new System.Drawing.Size(575, 374);
@@ -151,15 +151,15 @@ namespace Ch5_Exer11_TippingTable3
             this.txtHighestBill.Size = new System.Drawing.Size(60, 26);
             this.txtHighestBill.TabIndex = 3;
             // 
-            // label6
+            // lblOuput
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(27, 36);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(159, 35);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "**output";
+            this.lblOuput.AutoSize = true;
+            this.lblOuput.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOuput.Location = new System.Drawing.Point(27, 36);
+            this.lblOuput.Name = "lblOuput";
+            this.lblOuput.Size = new System.Drawing.Size(159, 35);
+            this.lblOuput.TabIndex = 0;
+            this.lblOuput.Text = "**output";
             // 
             // label1
             // 
@@ -216,7 +216,7 @@ namespace Ch5_Exer11_TippingTable3
         #endregion
 
         private System.Windows.Forms.Panel pnlOutput;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblOuput;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
