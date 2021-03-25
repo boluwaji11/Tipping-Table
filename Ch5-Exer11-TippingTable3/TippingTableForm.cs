@@ -50,31 +50,64 @@ namespace Ch5_Exer11_TippingTable3
             double lowestPercent = 0;
             double highestPercent = 0;
             const double TIP_RATE_STEP = 0.05;
-            string outputLines = "";
-            
+            const double BILL_STEP = 10.00;
 
-            //Input and Validation
-            if (!(double.TryParse(txtLowestPercentage.Text, out lowestPercent) && double.TryParse(txtHighestPercentage.Text, out highestPercent)))
+            double lowestBill = 0;
+            double highestBill= 0;
+            double tip;
+
+            string outputLines = "Price";
+
+
+            //Input Validation
+            if (!(double.TryParse(txtLowestPercentage.Text, out lowestPercent) && double.TryParse(txtHighestPercentage.Text, out highestPercent) &&
+                double.TryParse(txtLowestBill.Text, out lowestBill) && double.TryParse(txtHighestBill.Text, out highestBill)))
             {
-                MessageBox.Show("Enter a number.", "Input Error");
+                MessageBox.Show("Enter a valid number!", "Input Error"
+                                , MessageBoxButtons.OK
+                                , MessageBoxIcon.Error);
+                return;
             }
 
-            // Input
-            lowestPercent = (Convert.ToDouble(txtLowestBill.Text)) / 100;
-            highestPercent = (Convert.ToDouble(txtHighestPercentage.Text)) / 100;
+            // Get Input from Users
+            lowestPercent = Convert.ToDouble(txtLowestPercentage.Text) / 100;
+            highestPercent = Convert.ToDouble(txtHighestPercentage.Text) / 100;
+            lowestBill = Convert.ToDouble(txtLowestBill.Text);
+            highestBill = Convert.ToDouble(txtHighestBill.Text);
 
 
             //Display Tip Rate Header Line
-
+            //outputLines += String.Empty.PadLeft(4, ' ');
             while (lowestPercent <= highestPercent)
             {
-                outputLines += String.Format("{0,8}", lowestPercent.ToString("F"));
+                outputLines += String.Format("{0,9}", lowestPercent.ToString("P"));
                 lowestPercent += TIP_RATE_STEP;
             }
+            outputLines += "\n";
 
             // Display Dashed Line
+            outputLines += String.Empty.PadLeft(5, ' ');
+            outputLines += String.Empty.PadLeft(Convert.ToInt32(txtHighestPercentage.Text) * 2, '-');
+            outputLines += "\n";
 
+            // Reset the lowest percentage back to the user values
+            lowestPercent = Convert.ToDouble(txtLowestPercentage.Text) / 100;
+            
             // Generate Tip Rate Table
+            for (double i = lowestBill; i <= highestBill; i += BILL_STEP)
+            {
+                outputLines += String.Format("{0,3} |", i);
+
+                for (double j = lowestPercent; j <= highestPercent; j += TIP_RATE_STEP)
+                {
+                    tip = i * j;
+                    outputLines += String.Format("{0,9}", tip.ToString("C"));
+                }
+
+                outputLines += "\n";
+            }
+
+            // Display Output
             lblOuput.Text = outputLines.ToString();
 
             pnlOutput.Visible = true;

@@ -31,6 +31,7 @@ namespace Ch5_Exer11_TippingTable3
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TippingTableForm));
             this.pnlOutput = new System.Windows.Forms.Panel();
+            this.lblOuput = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@ namespace Ch5_Exer11_TippingTable3
             this.txtHighestPercentage = new System.Windows.Forms.TextBox();
             this.txtLowestBill = new System.Windows.Forms.TextBox();
             this.txtHighestBill = new System.Windows.Forms.TextBox();
-            this.lblOuput = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pnlOutput.SuspendLayout();
@@ -52,17 +52,27 @@ namespace Ch5_Exer11_TippingTable3
             this.pnlOutput.AutoScroll = true;
             this.pnlOutput.BackColor = System.Drawing.Color.Transparent;
             this.pnlOutput.Controls.Add(this.lblOuput);
-            this.pnlOutput.Location = new System.Drawing.Point(448, 130);
+            this.pnlOutput.Location = new System.Drawing.Point(470, 130);
             this.pnlOutput.Name = "pnlOutput";
-            this.pnlOutput.Size = new System.Drawing.Size(575, 374);
+            this.pnlOutput.Size = new System.Drawing.Size(634, 421);
             this.pnlOutput.TabIndex = 0;
+            // 
+            // lblOuput
+            // 
+            this.lblOuput.AutoSize = true;
+            this.lblOuput.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOuput.Location = new System.Drawing.Point(27, 36);
+            this.lblOuput.Name = "lblOuput";
+            this.lblOuput.Size = new System.Drawing.Size(106, 23);
+            this.lblOuput.TabIndex = 0;
+            this.lblOuput.Text = "**output";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(68, 175);
+            this.label2.Location = new System.Drawing.Point(76, 187);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(231, 27);
             this.label2.TabIndex = 2;
@@ -73,7 +83,7 @@ namespace Ch5_Exer11_TippingTable3
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(68, 231);
+            this.label3.Location = new System.Drawing.Point(76, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(237, 27);
             this.label3.TabIndex = 3;
@@ -84,7 +94,7 @@ namespace Ch5_Exer11_TippingTable3
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(68, 285);
+            this.label4.Location = new System.Drawing.Point(76, 297);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(149, 27);
             this.label4.TabIndex = 4;
@@ -95,7 +105,7 @@ namespace Ch5_Exer11_TippingTable3
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Lato", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(68, 339);
+            this.label5.Location = new System.Drawing.Point(76, 351);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 27);
             this.label5.TabIndex = 5;
@@ -104,7 +114,7 @@ namespace Ch5_Exer11_TippingTable3
             // btnSubmit
             // 
             this.btnSubmit.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSubmit.Location = new System.Drawing.Point(280, 407);
+            this.btnSubmit.Location = new System.Drawing.Point(288, 419);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(96, 42);
             this.btnSubmit.TabIndex = 4;
@@ -115,7 +125,7 @@ namespace Ch5_Exer11_TippingTable3
             // btnClear
             // 
             this.btnClear.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClear.Location = new System.Drawing.Point(127, 406);
+            this.btnClear.Location = new System.Drawing.Point(135, 418);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(96, 43);
             this.btnClear.TabIndex = 5;
@@ -125,41 +135,31 @@ namespace Ch5_Exer11_TippingTable3
             // 
             // txtLowestPercentage
             // 
-            this.txtLowestPercentage.Location = new System.Drawing.Point(347, 175);
+            this.txtLowestPercentage.Location = new System.Drawing.Point(355, 187);
             this.txtLowestPercentage.Name = "txtLowestPercentage";
             this.txtLowestPercentage.Size = new System.Drawing.Size(60, 26);
             this.txtLowestPercentage.TabIndex = 0;
             // 
             // txtHighestPercentage
             // 
-            this.txtHighestPercentage.Location = new System.Drawing.Point(347, 231);
+            this.txtHighestPercentage.Location = new System.Drawing.Point(355, 243);
             this.txtHighestPercentage.Name = "txtHighestPercentage";
             this.txtHighestPercentage.Size = new System.Drawing.Size(60, 26);
             this.txtHighestPercentage.TabIndex = 1;
             // 
             // txtLowestBill
             // 
-            this.txtLowestBill.Location = new System.Drawing.Point(347, 285);
+            this.txtLowestBill.Location = new System.Drawing.Point(355, 297);
             this.txtLowestBill.Name = "txtLowestBill";
             this.txtLowestBill.Size = new System.Drawing.Size(60, 26);
             this.txtLowestBill.TabIndex = 2;
             // 
             // txtHighestBill
             // 
-            this.txtHighestBill.Location = new System.Drawing.Point(347, 339);
+            this.txtHighestBill.Location = new System.Drawing.Point(355, 351);
             this.txtHighestBill.Name = "txtHighestBill";
             this.txtHighestBill.Size = new System.Drawing.Size(60, 26);
             this.txtHighestBill.TabIndex = 3;
-            // 
-            // lblOuput
-            // 
-            this.lblOuput.AutoSize = true;
-            this.lblOuput.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOuput.Location = new System.Drawing.Point(27, 36);
-            this.lblOuput.Name = "lblOuput";
-            this.lblOuput.Size = new System.Drawing.Size(159, 35);
-            this.lblOuput.TabIndex = 0;
-            this.lblOuput.Text = "**output";
             // 
             // label1
             // 
@@ -177,17 +177,18 @@ namespace Ch5_Exer11_TippingTable3
             this.panel1.BackColor = System.Drawing.Color.Ivory;
             this.panel1.Location = new System.Drawing.Point(2, 81);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1079, 10);
+            this.panel1.Size = new System.Drawing.Size(1160, 10);
             this.panel1.TabIndex = 12;
             // 
             // TippingTableForm
             // 
+            this.AcceptButton = this.btnSubmit;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1070, 588);
+            this.ClientSize = new System.Drawing.Size(1159, 628);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtHighestBill);
