@@ -59,7 +59,7 @@ namespace Ch5_Exer11_TippingTable3
             string outputLines = "Price";
 
 
-            //Input Validation
+            //Input Validations
             if (!(double.TryParse(txtLowestPercentage.Text, out lowestPercent) && double.TryParse(txtHighestPercentage.Text, out highestPercent) &&
                 double.TryParse(txtLowestBill.Text, out lowestBill) && double.TryParse(txtHighestBill.Text, out highestBill)))
             {
@@ -79,13 +79,21 @@ namespace Ch5_Exer11_TippingTable3
                 return;
             }
 
+            if (lowestBill > highestBill)
+            {
+                MessageBox.Show("Lowest Bill amount can not be higher than Highest Bill amount!", "Input Error"
+                        , MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+
+                return;
+            }
+
+
             // Get Input from Users
             lowestPercent = Convert.ToDouble(txtLowestPercentage.Text) / 100;
             highestPercent = Convert.ToDouble(txtHighestPercentage.Text) / 100;
             lowestBill = Convert.ToDouble(txtLowestBill.Text);
             highestBill = Convert.ToDouble(txtHighestBill.Text);
-
-
 
 
             //Display Tip Rate Header Line
@@ -99,7 +107,7 @@ namespace Ch5_Exer11_TippingTable3
 
             // Display Dashed Line
             outputLines += String.Empty.PadLeft(6, ' ');
-            outputLines += String.Empty.PadLeft(Convert.ToInt32(txtHighestPercentage.Text) * 2, '-');
+            outputLines += String.Empty.PadRight(Convert.ToInt32(txtHighestPercentage.Text)*2, '-');
             outputLines += "\n";
 
             // Reset the lowest percentage back to the user values
@@ -108,7 +116,7 @@ namespace Ch5_Exer11_TippingTable3
             // Generate Tip Rate Table
             for (double i = lowestBill; i <= highestBill; i += BILL_STEP)
             {
-                outputLines += String.Format("{0,3}  |", i);
+                outputLines += String.Format("{0,3} |", i.ToString("C"));
 
                 for (double j = lowestPercent; j <= highestPercent; j += TIP_RATE_STEP)
                 {

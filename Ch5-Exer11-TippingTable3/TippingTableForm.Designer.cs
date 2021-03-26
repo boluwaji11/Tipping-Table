@@ -66,6 +66,7 @@ namespace Ch5_Exer11_TippingTable3
             this.lblOuput.Size = new System.Drawing.Size(98, 21);
             this.lblOuput.TabIndex = 0;
             this.lblOuput.Text = "**output";
+            this.lblOuput.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // label2
             // 
