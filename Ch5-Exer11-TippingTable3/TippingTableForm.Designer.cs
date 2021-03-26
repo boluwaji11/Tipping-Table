@@ -52,18 +52,18 @@ namespace Ch5_Exer11_TippingTable3
             this.pnlOutput.AutoScroll = true;
             this.pnlOutput.BackColor = System.Drawing.Color.Transparent;
             this.pnlOutput.Controls.Add(this.lblOuput);
-            this.pnlOutput.Location = new System.Drawing.Point(470, 130);
+            this.pnlOutput.Location = new System.Drawing.Point(454, 138);
             this.pnlOutput.Name = "pnlOutput";
-            this.pnlOutput.Size = new System.Drawing.Size(634, 421);
+            this.pnlOutput.Size = new System.Drawing.Size(607, 416);
             this.pnlOutput.TabIndex = 0;
             // 
             // lblOuput
             // 
             this.lblOuput.AutoSize = true;
-            this.lblOuput.Font = new System.Drawing.Font("Courier New", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOuput.Location = new System.Drawing.Point(27, 36);
+            this.lblOuput.Font = new System.Drawing.Font("Courier New", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblOuput.Location = new System.Drawing.Point(9, 29);
             this.lblOuput.Name = "lblOuput";
-            this.lblOuput.Size = new System.Drawing.Size(106, 23);
+            this.lblOuput.Size = new System.Drawing.Size(98, 21);
             this.lblOuput.TabIndex = 0;
             this.lblOuput.Text = "**output";
             // 
@@ -139,6 +139,7 @@ namespace Ch5_Exer11_TippingTable3
             this.txtLowestPercentage.Name = "txtLowestPercentage";
             this.txtLowestPercentage.Size = new System.Drawing.Size(60, 26);
             this.txtLowestPercentage.TabIndex = 0;
+            this.txtLowestPercentage.TextChanged += new System.EventHandler(this.AllTextboxes_TextChanged);
             // 
             // txtHighestPercentage
             // 
@@ -146,6 +147,7 @@ namespace Ch5_Exer11_TippingTable3
             this.txtHighestPercentage.Name = "txtHighestPercentage";
             this.txtHighestPercentage.Size = new System.Drawing.Size(60, 26);
             this.txtHighestPercentage.TabIndex = 1;
+            this.txtHighestPercentage.TextChanged += new System.EventHandler(this.AllTextboxes_TextChanged);
             // 
             // txtLowestBill
             // 
@@ -153,6 +155,7 @@ namespace Ch5_Exer11_TippingTable3
             this.txtLowestBill.Name = "txtLowestBill";
             this.txtLowestBill.Size = new System.Drawing.Size(60, 26);
             this.txtLowestBill.TabIndex = 2;
+            this.txtLowestBill.TextChanged += new System.EventHandler(this.AllTextboxes_TextChanged);
             // 
             // txtHighestBill
             // 
@@ -160,6 +163,7 @@ namespace Ch5_Exer11_TippingTable3
             this.txtHighestBill.Name = "txtHighestBill";
             this.txtHighestBill.Size = new System.Drawing.Size(60, 26);
             this.txtHighestBill.TabIndex = 3;
+            this.txtHighestBill.TextChanged += new System.EventHandler(this.AllTextboxes_TextChanged);
             // 
             // label1
             // 

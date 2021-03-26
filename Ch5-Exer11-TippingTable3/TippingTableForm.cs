@@ -28,7 +28,7 @@ namespace Ch5_Exer11_TippingTable3
             txtLowestPercentage.Text = "10";
             txtHighestPercentage.Text = "25";
             txtLowestBill.Text = "10";
-            txtHighestBill.Text = "200";
+            txtHighestBill.Text = "100";
 
             // Clear Output Panel
             pnlOutput.Visible = false;
@@ -66,6 +66,16 @@ namespace Ch5_Exer11_TippingTable3
                 MessageBox.Show("Enter a valid number!", "Input Error"
                                 , MessageBoxButtons.OK
                                 , MessageBoxIcon.Error);
+
+                return;
+            }
+
+            if (lowestPercent > highestPercent)
+            {
+                MessageBox.Show("Lowest Rate can not be higher than Highest Rate!", "Input Error"
+                        , MessageBoxButtons.OK
+                        , MessageBoxIcon.Error);
+
                 return;
             }
 
@@ -76,17 +86,19 @@ namespace Ch5_Exer11_TippingTable3
             highestBill = Convert.ToDouble(txtHighestBill.Text);
 
 
+
+
             //Display Tip Rate Header Line
-            //outputLines += String.Empty.PadLeft(4, ' ');
+            outputLines += String.Empty.PadLeft(1, ' ');
             while (lowestPercent <= highestPercent)
             {
-                outputLines += String.Format("{0,9}", lowestPercent.ToString("P"));
+                outputLines += String.Format("{0,10}", lowestPercent.ToString("P"));
                 lowestPercent += TIP_RATE_STEP;
             }
             outputLines += "\n";
 
             // Display Dashed Line
-            outputLines += String.Empty.PadLeft(5, ' ');
+            outputLines += String.Empty.PadLeft(6, ' ');
             outputLines += String.Empty.PadLeft(Convert.ToInt32(txtHighestPercentage.Text) * 2, '-');
             outputLines += "\n";
 
@@ -96,12 +108,12 @@ namespace Ch5_Exer11_TippingTable3
             // Generate Tip Rate Table
             for (double i = lowestBill; i <= highestBill; i += BILL_STEP)
             {
-                outputLines += String.Format("{0,3} |", i);
+                outputLines += String.Format("{0,3}  |", i);
 
                 for (double j = lowestPercent; j <= highestPercent; j += TIP_RATE_STEP)
                 {
                     tip = i * j;
-                    outputLines += String.Format("{0,9}", tip.ToString("C"));
+                    outputLines += String.Format("{0,10}", tip.ToString("C"));
                 }
 
                 outputLines += "\n";
@@ -111,6 +123,16 @@ namespace Ch5_Exer11_TippingTable3
             lblOuput.Text = outputLines.ToString();
 
             pnlOutput.Visible = true;
+        }
+
+        //TextChange Event Handler
+        private void AllTextboxes_TextChanged(object sender, EventArgs e)
+        {
+            if (sender is TextBox)
+            {
+                TextBox tb = (TextBox)sender;
+                pnlOutput.Visible = false;
+            }
         }
     }
 }
